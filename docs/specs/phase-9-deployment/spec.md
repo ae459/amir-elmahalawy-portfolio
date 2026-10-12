@@ -25,7 +25,7 @@ communicate intent and provide the live link immediately.
 - [x] `.github/workflows/deploy.yml` — CI/CD pipeline for GitHub Pages
 - [x] `README.md` — project README with live site link prominent at top
 - [x] GitHub Pages enabled in repository settings
-- [x] Live site accessible at `https://[username].github.io/IS117-Portfolio-Project/`
+- [x] Live site accessible at `https://ae459.github.io/amir-elmahalawy-portfolio/`
 - [x] All pages load correctly on the live site (no 404s, no broken assets)
 
 ---
@@ -41,8 +41,8 @@ const isProd = process.env.NODE_ENV === "production";
 
 const nextConfig: NextConfig = {
   output: "export",
-  basePath: isProd ? "/IS117-Portfolio-Project" : "",
-  assetPrefix: isProd ? "/IS117-Portfolio-Project/" : "",
+  basePath: isProd ? "/amir-elmahalawy-portfolio" : "",
+  assetPrefix: isProd ? "/amir-elmahalawy-portfolio/" : "",
   images: {
     unoptimized: true, // Required for static export
   },
@@ -53,7 +53,7 @@ export default nextConfig;
 ```
 
 **Why `basePath`:** GitHub Pages serves the site at
-`/IS117-Portfolio-Project/` (the repo name), not at the root. Without
+`/amir-elmahalawy-portfolio/` (the repo name), not at the root. Without
 `basePath`, all internal links will 404.
 
 **Why `images.unoptimized`:** Next.js image optimization requires a server.
@@ -131,7 +131,7 @@ jobs:
 ````markdown
 # Amir E. — AI Forward Engineer Portfolio
 
-> **Live Site:** [https://[username].github.io/IS117-Portfolio-Project/](link)
+> **Live Site:** [https://ae459.github.io/amir-elmahalawy-portfolio/](https://ae459.github.io/amir-elmahalawy-portfolio/)
 
 ---
 

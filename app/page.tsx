@@ -2,13 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
-  Zap,
-  BookOpen,
-  Target,
+  ArrowUpRight,
+  ClipboardList,
+  Laptop,
   Mail,
-  ArrowUpRight as ArrowUpRightIcon,
-  GitBranch,
-  Link as LinkIcon,
+  Network,
+  ShieldCheck,
+  UserRoundPlus,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -16,215 +16,157 @@ import { Panel } from "@/components/ui/panel";
 import { imgPath } from "@/lib/utils";
 import { siteConfig } from "@/lib/site";
 
-const identitySignals = [
+const supportAreas = [
   {
-    eyebrow: "What I Build",
-    title: "AI-Forward Systems",
+    title: "Technical support",
     description:
-      "Tools and workflows where AI is an intentional architectural layer — not an afterthought. Automation pipelines, LLM integrations, and orchestration patterns.",
-    icon: Zap,
+      "Diagnose and resolve hardware, software, and connectivity issues through help desk tickets, phone calls, and email.",
+    icon: ClipboardList,
   },
   {
-    eyebrow: "How I Work",
-    title: "Spec First, Then Build",
+    title: "Devices & applications",
     description:
-      "I plan before I code. Every project starts with a clear problem statement, research, and a written spec. AI is used as a collaborator, not a crutch.",
-    icon: BookOpen,
+      "Set up, configure, and maintain computers, laptops, printers, mobile devices, and software.",
+    icon: Laptop,
   },
   {
-    eyebrow: "Where I’m Headed",
-    title: "AI Engineering",
+    title: "Accounts & access",
     description:
-      "I want to work at the intersection of software engineering and applied AI — building the infrastructure that makes intelligent systems reliable at scale.",
-    icon: Target,
+      "Help users with account administration, password resets, and access permissions.",
+    icon: ShieldCheck,
+  },
+  {
+    title: "Employee lifecycle",
+    description:
+      "Prepare equipment and account access for new hires, and collect company assets during offboarding.",
+    icon: UserRoundPlus,
+  },
+  {
+    title: "Guides & escalation",
+    description:
+      "Document common fixes, train users on standard tools and security practices, and route complex issues to specialist teams.",
+    icon: Network,
   },
 ];
 
-const skillPreview = [
-  "Python", "TypeScript", "Next.js", "Tailwind CSS",
-  "OpenAI API", "Prompt Engineering", "Git", "Spec-Driven Dev",
-];
-
-const contactLinks = [
-  {
-    label: "GitHub",
-    sub: "github.com/ae459",
-    href: siteConfig.github,
-    icon: GitBranch,
-    external: true,
-  },
-  {
-    label: "LinkedIn",
-    sub: "linkedin.com/in/aelmahalawy",
-    href: siteConfig.linkedin,
-    icon: LinkIcon,
-    external: true,
-  },
-  {
-    label: "Email",
-    sub: "amir.elmaha@gmail.com",
-    href: siteConfig.email,
-    icon: Mail,
-    external: false,
-  },
-];
+const highlights = ["Help desk support", "Hardware & software setup", "Account administration", "IT documentation"];
 
 export default function HomePage() {
   return (
     <div className="flex flex-col">
-      {/* Hero */}
       <section className="section-spacing page-shell">
-        <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-          <div className="flex flex-col gap-6">
-            <p className="eyebrow">AI Forward Engineer · IT Graduate, NJIT</p>
-            <h1 className="text-[var(--foreground)] leading-[1.05]">
-              Building the systems that make AI{" "}
-              <span className="text-[var(--accent-soft)]">useful.</span>
+        <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+          <div className="flex flex-col items-start gap-6">
+            <p className="eyebrow">IT Technical Engineer · NJIT Information Technology</p>
+            <h1 className="max-w-[16ch] text-[var(--foreground)] leading-[1.05]">
+              Keeping people and technology{" "}
+              <span className="text-[var(--accent-soft)]">moving forward.</span>
             </h1>
-            <p className="text-[var(--ink-70)] text-lg leading-relaxed max-w-[50ch]">
-              I&apos;m a recent graduate from NJIT in Information Technology with a focus on
-              AI-forward engineering. I&apos;m not just learning to use AI tools —
-              I&apos;m learning to design the workflows, architectures, and systems
-              where AI does serious work.
+            <p className="max-w-[55ch] text-lg leading-relaxed text-[var(--ink-70)]">
+              I help people get back to work by resolving technical issues,
+              preparing reliable devices, and making everyday technology easier
+              to use. My work spans user support, endpoint setup, account
+              administration, onboarding, and clear documentation.
             </p>
-            <div className="flex flex-wrap gap-3 mt-2">
+            <div className="mt-1 flex flex-wrap gap-3">
               <Button asChild size="lg">
-                <Link href="/projects">
-                  View My Projects
-                  <ArrowRight size={16} />
+                <Link href="/contact">
+                  Contact me <ArrowRight size={16} />
                 </Link>
               </Button>
               <Button asChild variant="secondary" size="lg">
-                <Link href="/about">About Me</Link>
+                <Link href="/projects">Explore my work</Link>
               </Button>
+            </div>
+            <div className="mt-2 flex flex-wrap gap-2" aria-label="Areas of experience">
+              {highlights.map((highlight) => (
+                <span key={highlight} className="skill-badge">{highlight}</span>
+              ))}
             </div>
           </div>
 
-          {/* Hero Visual */}
-          <div className="flex flex-col gap-6 relative">
-            <div className="relative transform scale-95">
-              <div
-                className="rounded-[var(--radius-xl)] border border-[var(--ink-12)] bg-[var(--surface-1)] overflow-hidden"
-                style={{ aspectRatio: "3/4" }}
-              >
-                <Image
-                  src={imgPath("/Profile-Picture.png")}
-                  alt="Amir Eskandari's profile picture"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </div>
-              {/* Glow effect */}
-              <div
-                className="absolute inset-0 rounded-[var(--radius-xl)] pointer-events-none"
-                style={{
-                  background:
-                    "radial-gradient(ellipse at 50% 50%, var(--accent-muted) 0%, transparent 70%)",
-                }}
+          <div className="relative mx-auto w-full max-w-md">
+            <div className="relative overflow-hidden rounded-[var(--radius-xl)] border border-[var(--ink-12)] bg-[var(--surface-1)]" style={{ aspectRatio: "4/5" }}>
+              <Image
+                src={imgPath("/Profile-Picture.png")}
+                alt="Amir Elmahalawy"
+                fill
+                className="object-cover"
+                priority
               />
             </div>
-            <div className="flex flex-col gap-3">
-              {contactLinks.map((item) => {
-                const Icon = item.icon;
-                const Tag = item.external ? "a" : "a";
-                const extraProps = item.external
-                  ? { target: "_blank", rel: "noopener noreferrer" }
-                  : {};
-                return (
-                  <Tag
-                    key={item.label}
-                    href={item.href}
-                    {...extraProps}
-                    className="group flex items-center justify-between p-4 rounded-[var(--radius-lg)] border border-[var(--ink-12)] bg-[var(--surface-1)] hover:border-[var(--accent-border)] hover:bg-[var(--accent-muted)] transition-colors"
-                  >
-                    <div className="flex items-center gap-4">
-                      <div className="p-2 rounded-[var(--radius-sm)] bg-[var(--surface-2)] group-hover:bg-[var(--accent-muted)] transition-colors">
-                        <Icon
-                          size={18}
-                          className="text-[var(--ink-60)] group-hover:text-[var(--accent-soft)] transition-colors"
-                        />
-                      </div>
-                      <div>
-                        <p className="text-sm font-semibold text-[var(--foreground)]">
-                          {item.label}
-                        </p>
-                      </div>
-                    </div>
-                    <ArrowUpRightIcon
-                      size={16}
-                      className="text-[var(--ink-40)] group-hover:text-[var(--accent-soft)] transition-colors"
-                    />
-                  </Tag>
-                );
-              })}
-            </div>
+            <a
+              href={siteConfig.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="absolute bottom-5 left-5 right-5 flex items-center justify-between rounded-[var(--radius-lg)] border border-[var(--ink-12)] bg-[var(--background)]/90 p-4 backdrop-blur-md transition-colors hover:border-[var(--accent-border)]"
+            >
+              <span>
+                <span className="block text-sm font-semibold text-[var(--foreground)]">Connect on LinkedIn</span>
+                <span className="block text-xs text-[var(--ink-60)]">Let&apos;s talk IT support</span>
+              </span>
+              <ArrowUpRight size={18} aria-hidden="true" />
+            </a>
           </div>
         </div>
       </section>
 
-      {/* Identity Signals */}
       <section className="section-spacing page-shell border-t border-[var(--ink-08)]">
         <SectionHeading
-          eyebrow="Direction"
-          title="Who I’m Building Toward"
-          description="Three things that define how I approach my work and where I’m heading."
+          eyebrow="What I Do"
+          title="Practical IT support, end to end"
+          description="From the first user report to a documented resolution or a well-routed escalation."
           className="mb-10"
         />
-        <div className="grid gap-5 sm:grid-cols-3">
-          {identitySignals.map((signal) => {
-            const Icon = signal.icon;
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {supportAreas.map((area) => {
+            const Icon = area.icon;
             return (
-              <Panel key={signal.title} variant="default" className="hover-lift flex flex-col gap-4">
-                <div className="flex items-center gap-3">
-                  <div className="p-2 rounded-[var(--radius-sm)] bg-[var(--accent-muted)] border border-[var(--accent-border)]">
-                    <Icon size={16} className="text-[var(--accent-soft)]" />
-                  </div>
-                  <p className="eyebrow">{signal.eyebrow}</p>
+              <Panel key={area.title} variant="default" className="hover-lift flex flex-col gap-4">
+                <div className="w-fit rounded-[var(--radius-sm)] border border-[var(--accent-border)] bg-[var(--accent-muted)] p-2">
+                  <Icon size={18} className="text-[var(--accent-soft)]" aria-hidden="true" />
                 </div>
-                <h3 className="text-[var(--foreground)] text-lg font-semibold">
-                  {signal.title}
-                </h3>
-                <p className="text-[var(--ink-60)] text-sm leading-relaxed">
-                  {signal.description}
-                </p>
+                <h3 className="text-[var(--foreground)]">{area.title}</h3>
+                <p className="text-sm leading-relaxed text-[var(--ink-60)]">{area.description}</p>
               </Panel>
             );
           })}
         </div>
       </section>
 
-      {/* Skills Preview */}
       <section className="section-spacing page-shell border-t border-[var(--ink-08)]">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-8">
+        <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center">
           <SectionHeading
-            eyebrow="Skills"
-            title="Tools I’m Building With"
+            eyebrow="How I Work"
+            title="Clear communication. Thoughtful follow-through."
+            description="Technical support is about more than fixing a device. It means listening carefully, explaining the next step, protecting access, and leaving useful notes for the next person."
           />
-          <Button asChild variant="ghost">
-            <Link href="/skills">
-              Full skill set <ArrowRight size={14} />
-            </Link>
-          </Button>
-        </div>
-        <div className="flex flex-wrap gap-2">
-          {skillPreview.map((skill) => (
-            <span key={skill} className="skill-badge">{skill}</span>
-          ))}
+          <div className="flex flex-col gap-3">
+            {[
+              "Understand the issue and its impact before troubleshooting.",
+              "Keep users informed in plain, approachable language.",
+              "Document the fix and escalate clearly when specialist help is needed.",
+            ].map((item, index) => (
+              <div key={item} className="flex items-start gap-4 rounded-[var(--radius-md)] border border-[var(--ink-08)] bg-[var(--surface-1)] p-4">
+                <span className="font-mono text-xs text-[var(--accent-soft)]">0{index + 1}</span>
+                <p className="text-sm leading-relaxed text-[var(--ink-70)]">{item}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* CTA */}
       <section className="section-spacing page-shell border-t border-[var(--ink-08)]">
-        <div className="rounded-[var(--radius-xl)] border border-[var(--accent-border)] bg-[var(--accent-muted)] p-10 text-center flex flex-col items-center gap-5">
-          <p className="eyebrow">Get in Touch</p>
-          <p className="text-[var(--foreground)] text-2xl font-bold tracking-tight max-w-[32ch]">
-            I’m at the beginning of this path. But I’m building it with intention.
-          </p>
-          <Button asChild size="lg">
-            <Link href="/contact">
-              Let’s Talk <ArrowRight size={16} />
-            </Link>
+        <div className="flex flex-col items-start justify-between gap-6 rounded-[var(--radius-xl)] border border-[var(--accent-border)] bg-[var(--accent-muted)] p-8 sm:flex-row sm:items-center">
+          <div>
+            <p className="eyebrow mb-2">Opportunities & Connections</p>
+            <h2 className="mb-2 text-2xl text-[var(--foreground)]">Looking for an IT support professional?</h2>
+            <p className="text-sm text-[var(--ink-70)]">I&apos;d be glad to hear about your team and the challenges you&apos;re solving.</p>
+          </div>
+          <Button asChild size="lg" className="shrink-0">
+            <a href={siteConfig.email}>
+              <Mail size={16} /> Email me
+            </a>
           </Button>
         </div>
       </section>

@@ -10,7 +10,7 @@ import { imgPath } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Projects",
   description:
-    "Portfolio work, work in progress, and project concepts — all grounded in real research.",
+    "Selected web projects by Amir Elmahalawy, including a responsive IT support portfolio and an interactive Marvel Comics history experience.",
 };
 
 type ProjectStatus = "completed" | "in-progress" | "concept";
@@ -34,9 +34,9 @@ const projects: {
     image: "/project-protfolio-site.png",
     imageAlt: "Code editor and rendered website side by side, dark theme",
     description:
-      "A spec-driven portfolio website built with Next.js 16, TypeScript, and Tailwind CSS v4. Designed using the professor’s AI orchestration methodology — planning with 9 phase specs, building with purpose, and verifying with quality gates. Every architectural decision is documented.",
+      "A responsive professional portfolio built with Next.js, TypeScript, and Tailwind CSS. The site organizes technical support experience, skills, and projects into a clear, accessible experience for visitors.",
     what_it_shows:
-      "Spec-first development, design system thinking, and intentional AI-assisted workflow.",
+      "Clear information architecture, attention to detail, and a user-focused approach to presenting technical information.",
     tech: ["Next.js 16", "TypeScript", "Tailwind CSS v4", "GitHub Pages"],
     live: "/",
   },
@@ -48,34 +48,10 @@ const projects: {
     imageAlt: "Museum-style scroll web interface with editorial layout",
     github: "https://github.com/ae459/IS117_MT",
     description:
-      "A museum-style scrollytelling web experience exploring the history of Marvel Comics, built as an earlier IS117 project. Uses scroll-driven narrative, editorial layout, and custom CSS to guide visitors through comic book eras. Live on GitHub Pages.",
+      "A museum-style scrolling web experience exploring the history of Marvel Comics. Built as an IS117 project, it uses a guided narrative, editorial layout, and custom CSS to move visitors through different comic book eras.",
     what_it_shows:
-      "Foundational web skills, design thinking, and storytelling with web technology.",
+      "Web fundamentals, creative problem-solving, and designing a straightforward experience for visitors.",
     tech: ["HTML", "CSS", "JavaScript"],
-  },
-  {
-    id: "prompt-lab",
-    title: "AI Prompt Engineering Lab",
-    status: "in-progress",
-    image: "/project-prompt-lab.png",
-    imageAlt: "Abstract prompt conversation interface with AI-themed dark design",
-    description:
-      "A structured personal research workspace for testing and documenting LLM prompting patterns. Not a random folder of prompts — a documented methodology: system prompts, chain-of-thought examples, few-shot patterns, and output evaluation notes. Built as a GitHub repo.",
-    what_it_shows:
-      "Intentional AI use, evaluation discipline, and documentation habit.",
-    tech: ["Python", "OpenAI API", "Markdown"],
-  },
-  {
-    id: "spec-generator",
-    title: "Spec-to-Site Generator",
-    status: "concept",
-    image: "/project-spec-generator.png",
-    imageAlt: "Spec document transforming into code structure, abstract flow diagram",
-    description:
-      "A CLI tool that reads a markdown spec file, extracts component requirements, and generates typed Next.js component stubs with correct folder structure. Inspired by the professor’s spec-sprint methodology. Solves the gap between ‘I have a plan’ and ‘I have a starting codebase.’ Spec written. Build planned for Summer 2026.",
-    what_it_shows:
-      "AI orchestration thinking, developer tooling interest, and systems design approach.",
-    tech: ["TypeScript", "Node.js", "OpenAI API"],
   },
 ];
 
@@ -95,8 +71,8 @@ export default function ProjectsPage() {
         <div className="max-w-3xl">
           <SectionHeading
             eyebrow="Projects"
-            title="Work, Work in Progress, and Where I’m Heading"
-            description="A mix of completed work, active projects, and researched concepts. Concepts are clearly labeled — a written spec is more honest than a half-built project."
+            title="Selected projects"
+            description="A couple of completed web projects that show how I approach clear communication, useful structure, and the details of a polished user experience."
           />
         </div>
       </section>
@@ -171,10 +147,10 @@ export default function ProjectsPage() {
           <div>
             <p className="eyebrow mb-2">Opportunities</p>
             <p className="text-[var(--foreground)] font-semibold">
-              Have a project or internship opportunity?
+              Hiring for IT support or technical operations?
             </p>
             <p className="text-[var(--ink-60)] text-sm mt-1">
-              I’m actively looking for ways to build real experience.
+              I&apos;d be glad to connect and learn more about the role.
             </p>
           </div>
           <Button asChild size="lg" className="shrink-0">

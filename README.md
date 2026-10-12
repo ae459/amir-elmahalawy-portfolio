@@ -1,14 +1,14 @@
-# IS117 Portfolio Project — Amir E.
+# IT Technical Engineer Portfolio — Amir Elmahalawy
 
 ## 🌐 Live Site
 
-https://ae459.github.io/IS117-Protfolio-Project/
+https://ae459.github.io/amir-elmahalawy-portfolio/
 
 ---
 
 ## About This Project
 
-Final portfolio project for IS117 at NJIT. An aspirational professional portfolio for my target direction: **AI Forward Engineer**.
+Professional portfolio for Amir Elmahalawy, an **IT Technical Engineer**. The site highlights technical support, hardware and software setup, account administration, onboarding and offboarding, documentation, and selected web projects.
 
 Built with Next.js 16, TypeScript, Tailwind CSS v4, and deployed to GitHub Pages via GitHub Actions.
 
@@ -58,5 +58,4 @@ npm run build
 
 ## Presentation
 
-**Date:** May 8, 2026 · 11:30 AM–2:00 PM · Zoom
 **Course:** IS117, NJIT
