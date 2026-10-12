@@ -10,7 +10,7 @@ import { imgPath } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Projects",
   description:
-    "Selected web projects by Amir Elmahalawy, including a responsive IT support portfolio and an interactive Marvel Comics history experience.",
+    "Selected projects by Amir Elmahalawy, including a professional portfolio and MiroAI, an AI-powered research and productivity platform in progress.",
 };
 
 type ProjectStatus = "completed" | "in-progress" | "concept";
@@ -29,7 +29,7 @@ const projects: {
 }[] = [
   {
     id: "portfolio-site",
-    title: "IS117 Portfolio Site",
+    title: "Amir Elmahalawy Portfolio",
     status: "completed",
     image: "/project-protfolio-site.png",
     imageAlt: "Code editor and rendered website side by side, dark theme",
@@ -41,17 +41,16 @@ const projects: {
     live: "/",
   },
   {
-    id: "scrollytelling-museum",
-    title: "IS117 Marvel Comic Book Museum",
-    status: "completed",
-    image: "/project-scrollytelling.png",
-    imageAlt: "Museum-style scroll web interface with editorial layout",
-    github: "https://github.com/ae459/IS117_MT",
+    id: "miroai",
+    title: "MiroAI",
+    status: "in-progress",
+    image: "/project-prompt-lab.png",
+    imageAlt: "Abstract AI interface representing an AI-powered research platform",
     description:
-      "A museum-style scrolling web experience exploring the history of Marvel Comics. Built as an IS117 project, it uses a guided narrative, editorial layout, and custom CSS to move visitors through different comic book eras.",
+      "An AI-powered platform in development for deep research, problem solving, data analysis, image generation, and workflow automation. The project follows a spec-driven approach, with its initial foundation and architecture in planning.",
     what_it_shows:
-      "Web fundamentals, creative problem-solving, and designing a straightforward experience for visitors.",
-    tech: ["HTML", "CSS", "JavaScript"],
+      "Product thinking, structured planning, and an interest in building practical AI-powered tools.",
+    tech: ["AI research", "Data analysis", "Workflow automation", "Spec-driven development"],
   },
 ];
 
@@ -72,7 +71,7 @@ export default function ProjectsPage() {
           <SectionHeading
             eyebrow="Projects"
             title="Selected projects"
-            description="A couple of completed web projects that show how I approach clear communication, useful structure, and the details of a polished user experience."
+            description="Explore a completed portfolio project and MiroAI, an AI-powered platform currently in development."
           />
         </div>
       </section>
