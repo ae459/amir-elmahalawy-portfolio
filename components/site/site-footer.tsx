@@ -103,7 +103,7 @@ export function SiteFooter() {
         {/* Bottom bar */}
         <div className="mt-10 pt-6 border-t border-[var(--ink-08)] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
           <p className="text-xs text-[var(--ink-40)]">
-            © {year} {siteConfig.name}. Built with Next.js + Tailwind CSS + AI.
+            © {year} {siteConfig.name}. Built with Next.js + Tailwind CSS.
           </p>
           <a
             href={siteConfig.repoUrl}

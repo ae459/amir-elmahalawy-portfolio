@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-**Student:** Amir E.
+**Student:** Amir Elmahalawy
 **Course:** IS117
 **Final Presentation:** Friday, May 8, 2026 — 11:30 AM–2:00 PM (Zoom)
 **Professional Direction:** AI Forward Engineer

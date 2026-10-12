@@ -6,27 +6,28 @@ import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Get in touch — internships, collaboration, or mentorship.",
+  description:
+    "Contact Amir Elmahalawy about IT Technical Engineer roles, technical support opportunities, and professional connections.",
 };
 
 const audience = [
   {
-    eyebrow: "Internships",
+    eyebrow: "Hiring",
     who: "Employers & Recruiters",
     description:
-      "I’m actively looking for internship opportunities in AI engineering, software development, or technical roles for Summer/Fall 2026. Even if the role is entry-level, I’m ready to work hard and learn fast.",
+      "Get in touch about IT Technical Engineer, help desk, desktop support, or related opportunities. I bring a user-focused approach to troubleshooting, device setup, accounts, and documentation.",
   },
   {
-    eyebrow: "Collaboration",
-    who: "Fellow Students & Builders",
+    eyebrow: "Professional Network",
+    who: "IT Teams & Practitioners",
     description:
-      "If you’re working on a project that uses AI in a serious way — not just as a wrapper — I’m interested in talking and potentially collaborating.",
+      "I welcome conversations with people working in technical support, IT operations, endpoint management, and service delivery.",
   },
   {
-    eyebrow: "Mentorship",
-    who: "Engineers & Practitioners",
+    eyebrow: "Projects",
+    who: "Collaborators",
     description:
-      "If you work in AI engineering and are open to a short conversation about the field, I’d be grateful. I ask specific questions and I do my homework first.",
+      "Interested in a practical web or technology project? Reach out to talk about the goal, the users, and how we can make it work.",
   },
 ];
 
@@ -64,10 +65,10 @@ export default function ContactPage() {
           <div className="accent-line mb-6" />
           <h1 className="mb-6">Let’s Talk</h1>
           <p className="text-[var(--ink-70)] text-xl leading-relaxed">
-            I&apos;m a recent IT graduate from NJIT. I&apos;m not going to pretend I have
-            years of industry experience. What I have is a clear direction, a
-            documented workflow, and a genuine interest in building things that
-            work. If that&apos;s interesting to you — reach out.
+            I&apos;m an IT Technical Engineer focused on supporting users,
+            troubleshooting technical issues, and keeping devices and accounts
+            ready for work. If you&apos;re hiring or would like to connect, I&apos;d
+            be happy to hear from you.
           </p>
         </div>
       </section>
